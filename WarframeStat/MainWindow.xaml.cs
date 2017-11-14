@@ -36,6 +36,8 @@ namespace WarframeStat
 
         private void CetusCycleUpdated(object sender, CetusCycleUpdatedEventArgs e)
         {
+            DayNight.Content = e.NewCycle.IsDay ? "Day" : "Night";
+            TimeLeft.Content = e.NewCycle.TimeLeft;
             /// Put values into my textboxes
         }
     }
