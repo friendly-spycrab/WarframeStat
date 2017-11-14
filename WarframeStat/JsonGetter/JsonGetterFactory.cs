@@ -18,10 +18,9 @@ namespace WarframeStat.JsonGetter
             switch (getterType)
             {
                 case JsonGetterType.FromWarframeStat:
-                    
-                    break;
+                    return new WarframeStatJsonGetter();
                 default:
-                    break;
+                    return null;
             }
         }
     }
