@@ -13,11 +13,11 @@ namespace WarframeStat.MainStatGetter
         /// </summary>
         /// <param name="getterType"></param>
         /// <returns></returns>
-        public AbstractMainStatGetter GetJsonGetter(JsonGetterType getterType)
+        public AbstractMainStatGetter GetMainStatGetter(MainStatGetterType getterType)
         {
             switch (getterType)
             {
-                case JsonGetterType.FromWarframeStat:
+                case MainStatGetterType.FromWarframeStat:
                     return new WarframeMainStatGetter();
                 default:
                     return null;
@@ -25,7 +25,7 @@ namespace WarframeStat.MainStatGetter
         }
     }
 
-    public enum JsonGetterType
+    public enum MainStatGetterType
     {
         /// <summary>
         /// Get a JsonGetter object that fetches the statistics from http://ws.warframestat.us/pc
