@@ -57,6 +57,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Statistics\Alert.cs" />
+    <Compile Include="Statistics\CetusCycle.cs" />
+    <Compile Include="Statistics\ConclaveChallenge.cs" />
+    <Compile Include="Statistics\ConstructionProgress.cs" />
+    <Compile Include="Statistics\CountedItem.cs" />
+    <Compile Include="Statistics\DailyDeal.cs" />
+    <Compile Include="Statistics\DarkSector.cs" />
+    <Compile Include="Statistics\EarthCycle.cs" />
+    <Compile Include="Statistics\ErReward.cs" />
+    <Compile Include="Statistics\Fissure.cs" />
+    <Compile Include="Statistics\FlashSale.cs" />
+    <Compile Include="Statistics\Invasion.cs" />
+    <Compile Include="Statistics\Job.cs" />
+    <Compile Include="Statistics\MainStat.cs" />
+    <Compile Include="Statistics\Mission.cs" />
+    <Compile Include="Statistics\News.cs" />
+    <Compile Include="Statistics\Reward.cs" />
+    <Compile Include="Statistics\Simaris.cs" />
+    <Compile Include="Statistics\Sortie.cs" />
+    <Compile Include="Statistics\SyndicateMission.cs" />
+    <Compile Include="Statistics\Translations.cs" />
+    <Compile Include="Statistics\Variant.cs" />
+    <Compile Include="Statistics\VoidTrader.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
