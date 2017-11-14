@@ -57,9 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="JsonGetter\AbstractJsonGetter.cs" />
-    <Compile Include="JsonGetter\JsonGetterFactory.cs" />
-    <Compile Include="JsonGetter\WarframeStatJsonGetter.cs" />
+    <Compile Include="MainStatGetter\AbstractMainStatGetter.cs" />
+    <Compile Include="MainStatGetter\MainStatGetterFactory.cs" />
+    <Compile Include="MainStatGetter\WarframeMainStatGetter.cs" />
     <Compile Include="Statistics\Alert.cs" />
     <Compile Include="Statistics\CetusCycle.cs" />
     <Compile Include="Statistics\ConclaveChallenge.cs" />

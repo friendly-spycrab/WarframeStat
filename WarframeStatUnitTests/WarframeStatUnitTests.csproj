@@ -48,8 +48,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonGetterTests\JsonGetterFactoryTest.cs" />
-    <Compile Include="JsonGetterTests\WarframeStatJsonGetterTest.cs" />
+    <Compile Include="JsonGetterTests\MainStatGetterFactoryTest.cs" />
+    <Compile Include="JsonGetterTests\WarframeMainStatGetterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

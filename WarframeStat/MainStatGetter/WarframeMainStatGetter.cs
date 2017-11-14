@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using WarframeStat.Statistics;
 using System.Net;
-namespace WarframeStat.JsonGetter
+namespace WarframeStat.MainStatGetter
 {
-    public class WarframeStatJsonGetter : AbstractJsonGetter
+    public class WarframeMainStatGetter : AbstractMainStatGetter
     {
         /// <summary>
         /// Gets json from http://ws.warframestat.us/pc and converts it to a mainstat object

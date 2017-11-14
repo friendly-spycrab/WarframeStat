@@ -1,17 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WarframeStat.JsonGetter;
+using WarframeStat.MainStatGetter;
 using WarframeStat.Statistics;
 
 namespace WarframeStatUnitTests.JsonGetterTests
 {
     [TestClass]
-    public class WarframeStatJsonGetterTest
+    public class WarframeMainStatGetterTest
     {
         [TestMethod]
         public void GetMainStatTest()
         {
-            WarframeStatJsonGetter jsonGetter = new WarframeStatJsonGetter();
+            WarframeMainStatGetter jsonGetter = new WarframeMainStatGetter();
             MainStat stat = jsonGetter.GetMainStat();
 
             Assert.IsNotNull(stat);

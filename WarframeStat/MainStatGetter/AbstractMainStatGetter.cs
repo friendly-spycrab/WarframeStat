@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using WarframeStat.Statistics;
 
-namespace WarframeStat.JsonGetter
+namespace WarframeStat.MainStatGetter
 {
     /// <summary>
     /// Abstract class for getting Warframe json
     /// </summary>
-    public abstract class AbstractJsonGetter
+    public abstract class AbstractMainStatGetter
     {
         /// <summary>
         /// Gets a Mainstat object.

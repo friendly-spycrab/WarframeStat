@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WarframeStat.JsonGetter
+namespace WarframeStat.MainStatGetter
 {
-    public class JsonGetterFactory
+    public class MainStatGetterFactory
     {
         /// <summary>
         /// Gets a JsonGetter object that fits the gettertype argument.
         /// </summary>
         /// <param name="getterType"></param>
         /// <returns></returns>
-        public AbstractJsonGetter GetJsonGetter(JsonGetterType getterType)
+        public AbstractMainStatGetter GetJsonGetter(JsonGetterType getterType)
         {
             switch (getterType)
             {
                 case JsonGetterType.FromWarframeStat:
-                    return new WarframeStatJsonGetter();
+                    return new WarframeMainStatGetter();
                 default:
                     return null;
             }
