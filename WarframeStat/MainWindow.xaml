@@ -11,8 +11,8 @@
     </Window.Background>
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="113" Margin="20,10,0,0" VerticalAlignment="Top" Width="124" Opacity="0.65"/>
-        <Label x:Name="label" Content="Day/Night" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
-        <Label x:Name="label1" Content="Time Left" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
+        <Label x:Name="DayNight" Content="Day/Night" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
+        <Label x:Name="TimeLeft" Content="Time Left" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="label2" Content="Cetus Time" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" FontSize="20px" Width="124" HorizontalContentAlignment="Center"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="250" Margin="1023,17,0,0" VerticalAlignment="Top" Width="181" Opacity="0.65"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="1023,58,0,0" VerticalAlignment="Top" Width="181" Opacity="0.65"/>
