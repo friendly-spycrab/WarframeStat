@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarframeStat", "WarframeStat\WarframeStat.csproj", "{36B8B9CE-45FA-476F-8D3D-F93ECEB5E429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarframeStatUnitTests", "WarframeStatUnitTests\WarframeStatUnitTests.csproj", "{B17BEFDF-4685-4998-B04E-1EC7BA713883}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{36B8B9CE-45FA-476F-8D3D-F93ECEB5E429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36B8B9CE-45FA-476F-8D3D-F93ECEB5E429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36B8B9CE-45FA-476F-8D3D-F93ECEB5E429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17BEFDF-4685-4998-B04E-1EC7BA713883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17BEFDF-4685-4998-B04E-1EC7BA713883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17BEFDF-4685-4998-B04E-1EC7BA713883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17BEFDF-4685-4998-B04E-1EC7BA713883}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
