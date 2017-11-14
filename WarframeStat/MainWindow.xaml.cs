@@ -22,12 +22,21 @@ namespace WarframeStat
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainStatUpdator Updator;
         public MainWindow()
         {
             InitializeComponent();
+            /// Start the event for cetuscycle
+            MainStatGetterFactory factory = new MainStatGetterFactory();
+            AbstractMainStatGetter statGetter = factory.GetMainStatGetter(MainStatGetterType.FromWarframeStat);
+            Updator = new MainStatUpdator(statGetter.GetMainStat());
+            Updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
             
         }
 
-        
+        private void CetusCycleUpdated(object sender, CetusCycleUpdatedEventArgs e)
+        {
+            /// Put values into my textboxes
+        }
     }
 }
