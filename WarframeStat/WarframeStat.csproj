@@ -60,6 +60,7 @@
     <Compile Include="MainStatGetter\AbstractMainStatGetter.cs" />
     <Compile Include="MainStatGetter\MainStatGetterFactory.cs" />
     <Compile Include="MainStatGetter\WarframeMainStatGetter.cs" />
+    <Compile Include="MainStatUpdator.cs" />
     <Compile Include="Statistics\Alert.cs" />
     <Compile Include="Statistics\CetusCycle.cs" />
     <Compile Include="Statistics\ConclaveChallenge.cs" />

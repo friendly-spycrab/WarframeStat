@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WarframeStat.MainStatGetter;
+using WarframeStat.Statistics;
+
 namespace WarframeStat
 {
     /// <summary>
@@ -25,5 +27,7 @@ namespace WarframeStat
             InitializeComponent();
             
         }
+
+        
     }
 }
