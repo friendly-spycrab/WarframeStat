@@ -19,5 +19,8 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="1023,127,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="1023,194,0,0" Stroke="Black" VerticalAlignment="Top" Width="181"/>
         <Label x:Name="label2_Copy" Content="Sorties" HorizontalAlignment="Left" Margin="1023,21,0,0" VerticalAlignment="Top" FontSize="20px" Width="181" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_Copy" Content="Sortie 1 Mission" HorizontalAlignment="Left" Margin="1023,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="181"/>
+        <Label x:Name="label_Copy1" Content="Sortie 2 Mission" HorizontalAlignment="Left" Margin="1023,127,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="181"/>
+        <Label x:Name="label_Copy2" Content="Sortie 3 Mission" HorizontalAlignment="Left" Margin="1023,194,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="181"/>
     </Grid>
 </Window>
