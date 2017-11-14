@@ -58,6 +58,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="JsonGetter\AbstractJsonGetter.cs" />
+    <Compile Include="JsonGetter\JsonGetterFactory.cs" />
+    <Compile Include="JsonGetter\WarframeStatJsonGetter.cs" />
     <Compile Include="Statistics\Alert.cs" />
     <Compile Include="Statistics\CetusCycle.cs" />
     <Compile Include="Statistics\ConclaveChallenge.cs" />
