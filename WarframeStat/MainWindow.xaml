@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarframeStat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Warframe Stats" Height="680" Width="1240">
     <Grid>
-        
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="649" Stroke="Black" VerticalAlignment="Top" Width="1232"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="113" Margin="20,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="124"/>
+        <Label x:Name="label" Content="Day/Night" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
+        <Label x:Name="label1" Content="Time Left" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
+        <Label x:Name="label2" Content="Cetus Time" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" FontSize="20px" Width="124" HorizontalContentAlignment="Center"/>
+
     </Grid>
 </Window>
