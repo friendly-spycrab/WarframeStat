@@ -10,7 +10,6 @@ namespace WarframeStat.Statistics
     public partial class MainStat
     {
         [JsonProperty("alerts")]
-        [JsonProperty("alerts")]
         public List<Alert> Alerts { get; set; }
 
         [JsonProperty("cetusCycle")]
