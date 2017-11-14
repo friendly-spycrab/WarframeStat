@@ -38,7 +38,7 @@ namespace WarframeStat
 
         private void UpdateStat(object sender, EventArgs e)
         {
-            
+            stat.CetusCycle = UpdateCetusCycle(stat.CetusCycle,new TimeSpan(0,0,1));
         }
 
         /// <summary>
@@ -49,7 +49,9 @@ namespace WarframeStat
         /// <returns></returns>
         private CetusCycle UpdateCetusCycle(CetusCycle cycle,TimeSpan TimeAmountChanged)
         {
-            
+            cycle.TimeLeft = (ToTimeSpan(cycle.TimeLeft) - TimeAmountChanged).ToString();
+            OnCetusCycleUpdated(new CetusCycleUpdatedEventArgs() { NewCycle = cycle });
+            return cycle;
         }
 
         /// <summary>
@@ -66,11 +68,11 @@ namespace WarframeStat
             foreach (var item in Time.Split(' '))
             {
                 if (item.Contains("s"))
-                    Second = int.Parse(item);
+                    Second = int.Parse(item.Remove(item.Length - 1));
                 else if (item.Contains("m"))
-                    Minute = int.Parse(item);
+                    Minute = int.Parse(item.Remove(item.Length - 1));
                 else if(item.Contains("h"))
-                    Hour = int.Parse(item);
+                    Hour = int.Parse(item.Remove(item.Length - 1));
             }
 
             return new TimeSpan(Hour,Minute,Second);
