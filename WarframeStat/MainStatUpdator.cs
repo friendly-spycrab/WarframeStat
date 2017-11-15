@@ -19,6 +19,11 @@ namespace WarframeStat
         public CetusCycle NewCycle;
     }
 
+    public class MainStatUpdatedEventArgs : EventArgs
+    {
+        public MainStat NewStat;
+    }
+
     /// <summary>
     /// Main class for updating a MainStat class
     /// </summary>
@@ -40,6 +45,8 @@ namespace WarframeStat
         public MainStatGetterType getterType { get; set; } = MainStatGetterType.FromWarframeStat;
 
         public event EventHandler<CetusCycleUpdatedEventArgs> CetusCycleUpdated;
+
+        public event EventHandler<MainStatUpdatedEventArgs> MainStatusUpdated;
 
         /// <summary>
         /// Initializes MainStatUpdator. And auto gets a MainStat using the statGetterType param
@@ -161,6 +168,14 @@ namespace WarframeStat
             EventHandler<CetusCycleUpdatedEventArgs> handler = CetusCycleUpdated;
             handler?.Invoke(this,args);
         }
+
+        protected virtual void OnMainStatUpdated(MainStatUpdatedEventArgs args)
+        {
+            EventHandler<MainStatUpdatedEventArgs> handler = MainStatusUpdated;
+            handler?.Invoke(this, args);
+        }
+
+
 
 
     }

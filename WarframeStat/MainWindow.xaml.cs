@@ -36,7 +36,7 @@ namespace WarframeStat
             AbstractMainStatGetter statGetter = factory.GetMainStatGetter(MainStatGetterType.FromWarframeStat);
             Updator = new MainStatUpdator(statGetter.GetMainStat());
             Updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
-            
+            //Updator.MainStatusUpdated += new EventHandler<MainStatUpdatedEventArgs>();
         }
 
         
