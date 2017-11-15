@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarframeStat"
         mc:Ignorable="d"
-        Title="Warframe Stats" Height="680" Width="1240" WindowStyle="ToolWindow">
+        Title="Warframe Stats" Height="680" Width="1240" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="http://i.imgur.com/mQhBT8z.jpg"></ImageBrush>
     </Window.Background>
