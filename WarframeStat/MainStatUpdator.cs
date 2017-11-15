@@ -23,16 +23,16 @@ namespace WarframeStat
     /// </summary>
     public class MainStatUpdator
     {
+        private MainStat stat;
+
         public event EventHandler<CetusCycleUpdatedEventArgs> CetusCycleUpdated;
 
-        private MainStat stat;
-        
-        public MainStatUpdator(MainStat _stat)
+        public MainStatUpdator(MainStat inputStat)
         {
-            stat = _stat;
+            stat = inputStat;
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(UpdateStat);
-            dispatcherTimer.Interval = new TimeSpan(0,0,1);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
         }
 
@@ -49,7 +49,9 @@ namespace WarframeStat
         /// <returns></returns>
         private CetusCycle UpdateCetusCycle(CetusCycle cycle,TimeSpan TimeAmountChanged)
         {
-            cycle.TimeLeft = (ToTimeSpan(cycle.TimeLeft) - TimeAmountChanged).ToString();
+            TimeSpan TimeLeft = ToTimeSpan(cycle.TimeLeft);
+            TimeLeft -= TimeAmountChanged;
+            cycle.TimeLeft = String.Format("{0}h {1}m {2}s", TimeLeft.Hours, TimeLeft.Minutes, TimeLeft.Seconds);
             OnCetusCycleUpdated(new CetusCycleUpdatedEventArgs() { NewCycle = cycle });
             return cycle;
         }

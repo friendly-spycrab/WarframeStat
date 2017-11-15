@@ -17,28 +17,30 @@ using WarframeStat.Statistics;
 
 namespace WarframeStat
 {
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainStatUpdator Updator;
+        private MainStatUpdator updator;
+
         public MainWindow()
         {
             InitializeComponent();
-            /// Start the event for cetuscycle
+
+            // Start the event for cetuscycle
             MainStatGetterFactory factory = new MainStatGetterFactory();
             AbstractMainStatGetter statGetter = factory.GetMainStatGetter(MainStatGetterType.FromWarframeStat);
-            Updator = new MainStatUpdator(statGetter.GetMainStat());
-            Updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
-            
+            updator = new MainStatUpdator(statGetter.GetMainStat());
+            updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
         }
 
         private void CetusCycleUpdated(object sender, CetusCycleUpdatedEventArgs e)
         {
             DayNight.Content = e.NewCycle.IsDay ? "Day" : "Night";
             TimeLeft.Content = e.NewCycle.TimeLeft;
-            /// Put values into my textboxes
         }
     }
 }
