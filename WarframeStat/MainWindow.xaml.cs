@@ -24,7 +24,8 @@ namespace WarframeStat
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainStatUpdator updator;
+        private MainStatUpdator Updator;
+
 
         public MainWindow()
         {
@@ -33,14 +34,19 @@ namespace WarframeStat
             // Start the event for cetuscycle
             MainStatGetterFactory factory = new MainStatGetterFactory();
             AbstractMainStatGetter statGetter = factory.GetMainStatGetter(MainStatGetterType.FromWarframeStat);
-            updator = new MainStatUpdator(statGetter.GetMainStat());
-            updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
+            Updator = new MainStatUpdator(statGetter.GetMainStat());
+            Updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
+            
         }
 
+        
         private void CetusCycleUpdated(object sender, CetusCycleUpdatedEventArgs e)
         {
+            
             DayNight.Content = e.NewCycle.IsDay ? "Day" : "Night";
             TimeLeft.Content = e.NewCycle.TimeLeft;
         }
+
+        
     }
 }

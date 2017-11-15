@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarframeStat"
         mc:Ignorable="d"
-        Title="Warframe Stats" Height="680" Width="1240" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="Warframe Stats" Height="680" Width="1240" WindowStyle="ToolWindow" >
     <Window.Background>
         <ImageBrush ImageSource="http://i.imgur.com/mQhBT8z.jpg"></ImageBrush>
     </Window.Background>
@@ -14,13 +14,15 @@
         <Label x:Name="DayNight" Content="Day/Night" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="TimeLeft" Content="Time Left" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="label2" Content="Cetus Time" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" FontSize="20px" Width="124" HorizontalContentAlignment="Center"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="250" Margin="1023,17,0,0" VerticalAlignment="Top" Width="181" Opacity="0.65"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="1023,58,0,0" VerticalAlignment="Top" Width="181" Opacity="0.65"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="1023,127,0,0" VerticalAlignment="Top" Width="181" Opacity="0.65"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="1023,194,0,0" VerticalAlignment="Top" Width="181" Opacity="0.65"/>
-        <Label x:Name="label2_Copy" Content="Sorties" HorizontalAlignment="Left" Margin="1023,21,0,0" VerticalAlignment="Top" FontSize="20px" Width="181" HorizontalContentAlignment="Center"/>
-        <Label x:Name="label_Copy" Content="Sortie 1 Mission" HorizontalAlignment="Left" Margin="1023,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="181"/>
-        <Label x:Name="label_Copy1" Content="Sortie 2 Mission" HorizontalAlignment="Left" Margin="1023,127,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="181"/>
-        <Label x:Name="label_Copy2" Content="Sortie 3 Mission" HorizontalAlignment="Left" Margin="1023,194,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="181"/>
+        <Grid Margin="0,17,10,0" HorizontalAlignment="Right" Width="186" Height="254" VerticalAlignment="Top">
+            <Rectangle Fill="#FFF4F4F5" Margin="-1,0,0,-2" Opacity="0.65"/>
+            <Rectangle Fill="#FFF4F4F5" Margin="2,58,2,0" Height="26"   VerticalAlignment="Top" Width="181" Opacity="0.65"/>
+            <Rectangle Fill="#FFF4F4F5" Margin="2,127,2,0" Height="26"   VerticalAlignment="Top" Width="181" Opacity="0.65"/>
+            <Rectangle Fill="#FFF4F4F5" Margin="2,194,2,0" Width="181" Opacity="0.65" Height="26" VerticalAlignment="Top"/>
+            <Label x:Name="label2_Copy" Content="Sorties" Margin="-1,21,0,0" VerticalAlignment="Top" FontSize="20px" HorizontalContentAlignment="Center"/>
+            <Label x:Name="label_Copy" Content="Sortie 1 Mission" Margin="-1,58,0,0" HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top"/>
+            <Label x:Name="label_Copy1" Content="Sortie 2 Mission" Margin="-1,127,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            <Label x:Name="label_Copy2" Content="Sortie 3 Mission" Margin="-1,194,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+        </Grid>
     </Grid>
 </Window>

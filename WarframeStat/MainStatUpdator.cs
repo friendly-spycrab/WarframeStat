@@ -41,6 +41,10 @@ namespace WarframeStat
 
         public event EventHandler<CetusCycleUpdatedEventArgs> CetusCycleUpdated;
 
+        /// <summary>
+        /// Initializes MainStatUpdator. And auto gets a MainStat using the statGetterType param
+        /// </summary>
+        /// <param name="statGetterType">What type of MainStatGetter to use</param>
         public MainStatUpdator(MainStatGetterType statGetterType)
         {
             getterType = statGetterType;
@@ -51,6 +55,10 @@ namespace WarframeStat
             Timer.Start();
         }
 
+        /// <summary>
+        /// Initializes MainStatUpdator with an already made MainStat
+        /// </summary>
+        /// <param name="inputStat">Already made input MainStat param</param>
         public MainStatUpdator(MainStat inputStat)
         {
             stat = inputStat;
@@ -60,6 +68,11 @@ namespace WarframeStat
             Timer.Start();
         }
 
+        /// <summary>
+        /// Initializes MainStatUpdator
+        /// </summary>
+        /// <param name="inputStat">Already made input MainStat param</param>
+        /// <param name="statGetterType">What type of getter the class will use to update the input for future use</param>
         public MainStatUpdator(MainStat inputStat,MainStatGetterType statGetterType)
         {
             stat = inputStat;
@@ -71,12 +84,20 @@ namespace WarframeStat
             getterType = statGetterType;
         }
 
+        /// <summary>
+        /// Destructor. stops timer and sets the events to null
+        /// </summary>
         ~MainStatUpdator()
         {
             Timer.Stop();
             CetusCycleUpdated = null;
         }
 
+        /// <summary>
+        /// Updates all the neccesary values in the stat property
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateStat(object sender, EventArgs e)
         {
             stat.CetusCycle = UpdateCetusCycle(stat.CetusCycle,new TimeSpan(0,0,1));
@@ -97,6 +118,9 @@ namespace WarframeStat
             return cycle;
         }
 
+        /// <summary>
+        /// Gets a new MainStat from a MainStatGetter
+        /// </summary>
         private void GetNewMainStat()
         {
             MainStatGetterFactory factory = new MainStatGetterFactory();
@@ -107,7 +131,7 @@ namespace WarframeStat
         /// <summary>
         /// Converts the time left string to a timespan
         /// </summary>
-        /// <param name="Time"></param>
+        /// <param name="Time">The input time string formatted like this "5h 2m 20s"</param>
         /// <returns></returns>
         private TimeSpan ToTimeSpan(string Time)
         {
