@@ -51,6 +51,7 @@
     <Compile Include="JsonGetterTests\MainStatGetterFactoryTest.cs" />
     <Compile Include="JsonGetterTests\WarframeMainStatGetterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainStatUpdatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -8,12 +8,21 @@ namespace WarframeStatUnitTests
     public class JsonGetterFactoryTest
     {
         [TestMethod]
-        public void GetJsonGetterTest()
+        public void GetMainStatGetterTest()
         {
             MainStatGetterFactory factory = new MainStatGetterFactory();
             AbstractMainStatGetter Jsongetter = factory.GetMainStatGetter(MainStatGetterType.FromWarframeStat);
 
             Assert.IsInstanceOfType(Jsongetter,typeof(WarframeMainStatGetter));
+        }
+
+        [TestMethod]
+        public void GetMainStatGetterDefaultTest()
+        {
+            MainStatGetterFactory factory = new MainStatGetterFactory();
+            AbstractMainStatGetter Jsongetter = factory.GetMainStatGetter((MainStatGetterType)4);
+
+            Assert.IsNull(Jsongetter);
         }
     }
 }

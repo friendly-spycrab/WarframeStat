@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using WarframeStat.Statistics;
 using System.Windows.Threading;
+using WarframeStat.MainStatGetter;
 
 namespace WarframeStat
 {
@@ -23,17 +24,57 @@ namespace WarframeStat
     /// </summary>
     public class MainStatUpdator
     {
-        private MainStat stat;
+        /// <summary>
+        /// A private mainstat property
+        /// </summary>
+        public MainStat stat { get; private set; }
+
+        /// <summary>
+        /// Dispatcher timer for updating the mainstat
+        /// </summary>
+        private DispatcherTimer Timer;
+
+        /// <summary>
+        /// gettertype to get for updating type
+        /// </summary>
+        public MainStatGetterType getterType { get; set; } = MainStatGetterType.FromWarframeStat;
 
         public event EventHandler<CetusCycleUpdatedEventArgs> CetusCycleUpdated;
+
+        public MainStatUpdator(MainStatGetterType statGetterType)
+        {
+            getterType = statGetterType;
+            GetNewMainStat();
+            Timer = new DispatcherTimer();
+            Timer.Tick += new EventHandler(UpdateStat);
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
+        }
 
         public MainStatUpdator(MainStat inputStat)
         {
             stat = inputStat;
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(UpdateStat);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            dispatcherTimer.Start();
+            Timer = new DispatcherTimer();
+            Timer.Tick += new EventHandler(UpdateStat);
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
+        }
+
+        public MainStatUpdator(MainStat inputStat,MainStatGetterType statGetterType)
+        {
+            stat = inputStat;
+            Timer = new DispatcherTimer();
+            Timer.Tick += new EventHandler(UpdateStat);
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
+
+            getterType = statGetterType;
+        }
+
+        ~MainStatUpdator()
+        {
+            Timer.Stop();
+            CetusCycleUpdated = null;
         }
 
         private void UpdateStat(object sender, EventArgs e)
@@ -54,6 +95,13 @@ namespace WarframeStat
             cycle.TimeLeft = String.Format("{0}h {1}m {2}s", TimeLeft.Hours, TimeLeft.Minutes, TimeLeft.Seconds);
             OnCetusCycleUpdated(new CetusCycleUpdatedEventArgs() { NewCycle = cycle });
             return cycle;
+        }
+
+        private void GetNewMainStat()
+        {
+            MainStatGetterFactory factory = new MainStatGetterFactory();
+            AbstractMainStatGetter statGetter = factory.GetMainStatGetter(getterType);
+            stat = statGetter.GetMainStat();
         }
 
         /// <summary>
@@ -84,7 +132,7 @@ namespace WarframeStat
         /// Tell the user that the CetusCycle is updated
         /// </summary>
         /// <param name="args"></param>
-        public virtual void OnCetusCycleUpdated(CetusCycleUpdatedEventArgs args)
+        protected virtual void OnCetusCycleUpdated(CetusCycleUpdatedEventArgs args)
         {
             EventHandler<CetusCycleUpdatedEventArgs> handler = CetusCycleUpdated;
             handler?.Invoke(this,args);
