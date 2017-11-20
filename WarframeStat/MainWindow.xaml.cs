@@ -36,10 +36,19 @@ namespace WarframeStat
             AbstractMainStatGetter statGetter = factory.GetMainStatGetter(MainStatGetterType.FromWarframeStat);
             Updator = new MainStatUpdator(statGetter.GetMainStat());
             Updator.CetusCycleUpdated += new EventHandler<CetusCycleUpdatedEventArgs>(CetusCycleUpdated);
-            //Updator.MainStatusUpdated += new EventHandler<MainStatUpdatedEventArgs>();
+            Updator.MainStatusUpdated += new EventHandler<MainStatUpdatedEventArgs>(MainStatUpdated);
         }
 
-        
+        /// <summary>
+        /// Is called when main stat is updated 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainStatUpdated(object sender, MainStatUpdatedEventArgs e)
+        {
+            MessageBox.Show(e.NewStat.Sortie.Variants.ToString());
+        }
+
         private void CetusCycleUpdated(object sender, CetusCycleUpdatedEventArgs e)
         {
             
