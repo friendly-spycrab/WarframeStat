@@ -55,11 +55,11 @@ namespace WarframeStat
             misMod3.Text = e.NewStat.Sortie.Variants[2].Modifier;
 
             // Display alert
-            StringBuilder sb = new StringBuilder();
             AlertGrid.Children.Clear();
             int index = 1;
             foreach (Alert item in e.NewStat.Alerts)
             {
+                StringBuilder sb = new StringBuilder();
                 foreach (var Rewards in item.RewardTypes)
                 {
                     sb.AppendLine(Rewards);
@@ -70,7 +70,14 @@ namespace WarframeStat
                 AlertGrid.Children.Add(Eta);
 
                 TextBlock RewardsType = new TextBlock();
-                RewardsType.Text = sb.ToString();
+                if(sb.ToString() == "")
+                {
+                    RewardsType.Text = "Credits";
+                }
+                else
+                {
+                    RewardsType.Text = sb.ToString();
+                }
                 RewardsType.Margin = new Thickness() { Left = index * 100, Top = 20 };
                 AlertGrid.Children.Add(RewardsType);
 
