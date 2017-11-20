@@ -56,7 +56,8 @@ namespace WarframeStat
 
             // Display alert
             AlertGrid.Children.Clear();
-            int index = 1;
+            int xIndex = 0;
+            int yIndex = 0;
             foreach (Alert item in e.NewStat.Alerts)
             {
                 StringBuilder sb = new StringBuilder();
@@ -66,7 +67,7 @@ namespace WarframeStat
                 }
                 TextBlock Eta = new TextBlock();
                 Eta.Text = item.Eta;
-                Eta.Margin = new Thickness() { Left = index * 100  };                
+                Eta.Margin = new Thickness() { Left = xIndex * 100 + 50,Top = 10+ (yIndex * 80)  };                
                 AlertGrid.Children.Add(Eta);
 
                 TextBlock RewardsType = new TextBlock();
@@ -78,12 +79,17 @@ namespace WarframeStat
                 {
                     RewardsType.Text = sb.ToString();
                 }
-                RewardsType.Margin = new Thickness() { Left = index * 100, Top = 20 };
+                RewardsType.Margin = new Thickness() { Left = xIndex * 100 + 50, Top = 30 + (yIndex * 80) };
                 AlertGrid.Children.Add(RewardsType);
 
 
-
-                index++;
+                if(xIndex < 4)
+                    xIndex++;
+                else
+                {
+                    xIndex = 0;
+                    yIndex++;
+                }
             }
 
             
