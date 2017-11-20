@@ -63,7 +63,7 @@ namespace WarframeStat
                 {
                     sb.AppendLine(Rewards);
                 }
-                testing.Text = sb.ToString();
+                contentAlert.Text = sb.ToString();
                    
             }
 

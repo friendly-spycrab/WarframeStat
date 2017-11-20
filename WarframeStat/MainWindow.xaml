@@ -14,7 +14,7 @@
         <Label x:Name="DayNight" Content="Day/Night" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="TimeLeft" Content="Time Left" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="label2" Content="Cetus Time" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" FontSize="20px" Width="124" HorizontalContentAlignment="Center"/>
-        <Grid  Margin="0,17,10,0" HorizontalAlignment="Right" Width="557" Height="235" VerticalAlignment="Top">
+        <Grid  Margin="0,17,10,0" HorizontalAlignment="Right" Width="557" Height="260" VerticalAlignment="Top">
             <Rectangle Fill="#FFF4F4F5" Margin="-1,0,0,0" Opacity="0.65"/>
             <Label x:Name="label2_Copy" Content="Sorties" Margin="-1,21,0,0" VerticalAlignment="Top" FontSize="20px" HorizontalContentAlignment="Center"/>
             <TextBlock TextWrapping="Wrap" x:Name="misType1"  Text="Mission Type 1" Margin="24,78,377,0"  Height="26" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Width="137"/>
@@ -23,7 +23,8 @@
             <TextBlock TextWrapping="Wrap" x:Name="misMod3"   Text="Mission Modifier 3" Margin="387,104,52,0" HorizontalAlignment="Center" Height="102" VerticalAlignment="Top" Width="99"/>
             <TextBlock TextWrapping="Wrap" x:Name="misMod1"   Text="Mission Modifier 1" Margin="24,104,409,0" HorizontalAlignment="Center" Height="102" VerticalAlignment="Top" Width="105" />
             <TextBlock TextWrapping="Wrap" x:Name="misMod2"   Text="Mission Modifier 2" Margin="219,104,220,0" HorizontalAlignment="Center" Height="102" VerticalAlignment="Top" Width="99"/>
-            <TextBlock Name="alert" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alerts" VerticalAlignment="Top" Margin="248,144,0,0" FontSize="18" Width="51"/>
+            <TextBlock Name="alert" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alert Rewards" VerticalAlignment="Top" Margin="228,144,0,0" FontSize="18" Width="115" RenderTransformOrigin="0.543,0.417"/>
+            <TextBlock Name="contentAlert" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alerts" VerticalAlignment="Top" Margin="228,168,0,0" FontSize="14" Width="84" Height="82"/>
         </Grid>
     </Grid>
 </Window>
