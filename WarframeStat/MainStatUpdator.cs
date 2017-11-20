@@ -136,10 +136,19 @@ namespace WarframeStat
         private CetusCycle UpdateCetusCycle(CetusCycle cycle,TimeSpan TimeAmountChanged)
         {
             TimeSpan TimeLeft = ToTimeSpan(cycle.TimeLeft);
-            TimeLeft -= TimeAmountChanged;
-            cycle.TimeLeft = String.Format("{0}h {1}m {2}s", TimeLeft.Hours, TimeLeft.Minutes, TimeLeft.Seconds);
-            OnCetusCycleUpdated(new CetusCycleUpdatedEventArgs() { NewCycle = cycle });
-            return cycle;
+            if (TimeLeft > new TimeSpan(0, 0, 1))
+            {
+                TimeLeft -= TimeAmountChanged;
+                cycle.TimeLeft = String.Format("{0}h {1}m {2}s", TimeLeft.Hours, TimeLeft.Minutes, TimeLeft.Seconds);
+                OnCetusCycleUpdated(new CetusCycleUpdatedEventArgs() { NewCycle = cycle });
+                return cycle;
+            }
+            else
+            {
+                CounterForNewWarframStat = 0;
+                GetNewMainStat();
+                return stat.CetusCycle;
+            }
         }
 
         /// <summary>
