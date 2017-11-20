@@ -112,9 +112,10 @@ namespace WarframeStat
         /// <param name="e"></param>
         private void UpdateStat(object sender, EventArgs e)
         {
-            if(CounterForNewWarframStat < 1000)
+            if(CounterForNewWarframStat < 240)
             {
                 stat.CetusCycle = UpdateCetusCycle(stat.CetusCycle, new TimeSpan(0, 0, 1));
+                stat.Alerts = UpdateAlerts(stat.Alerts, new TimeSpan(0, 0, 1));
                 OnMainStatUpdated(new MainStatUpdatedEventArgs() { NewStat = stat });
 
                 CounterForNewWarframStat++;
@@ -125,6 +126,17 @@ namespace WarframeStat
                 GetNewMainStat();
             }
 
+        }
+
+        public List<Alert> UpdateAlerts(List<Alert> Alerts, TimeSpan TimeAmountChanged)
+        {
+            foreach (var item in Alerts)
+            {
+                TimeSpan TimeLeft = ToTimeSpan(item.Eta) - TimeAmountChanged;
+                item.Eta = String.Format("{0}h {1}m {2}s", TimeLeft.Hours, TimeLeft.Minutes, TimeLeft.Seconds);
+            }
+
+            return Alerts;
         }
 
         /// <summary>
