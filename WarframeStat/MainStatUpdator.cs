@@ -30,6 +30,11 @@ namespace WarframeStat
     public class MainStatUpdator
     {
         /// <summary>
+        /// Counter for seeing if should get a new mainstat
+        /// </summary>
+        private int CounterForNewWarframStat = 0;
+
+        /// <summary>
         /// A private mainstat property
         /// </summary>
         public MainStat stat { get; private set; }
@@ -107,8 +112,19 @@ namespace WarframeStat
         /// <param name="e"></param>
         private void UpdateStat(object sender, EventArgs e)
         {
-            stat.CetusCycle = UpdateCetusCycle(stat.CetusCycle,new TimeSpan(0,0,1));
-            OnMainStatUpdated(new MainStatUpdatedEventArgs() { NewStat = stat });
+            if(CounterForNewWarframStat < 1000)
+            {
+                stat.CetusCycle = UpdateCetusCycle(stat.CetusCycle, new TimeSpan(0, 0, 1));
+                OnMainStatUpdated(new MainStatUpdatedEventArgs() { NewStat = stat });
+
+                CounterForNewWarframStat++;
+            }
+            else
+            {
+                CounterForNewWarframStat = 0;
+                GetNewMainStat();
+            }
+
         }
 
         /// <summary>
