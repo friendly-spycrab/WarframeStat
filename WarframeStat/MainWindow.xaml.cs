@@ -54,17 +54,16 @@ namespace WarframeStat
             misMod2.Text = e.NewStat.Sortie.Variants[1].Modifier;
             misMod3.Text = e.NewStat.Sortie.Variants[2].Modifier;
 
-            StringBuilder sb = new StringBuilder();
 
             foreach (Alert item in e.NewStat.Alerts)
             {
-                
+                StringBuilder sb = new StringBuilder();
                 foreach (var Rewards in item.RewardTypes)
                 {
                     sb.AppendLine(Rewards);
                 }
                 contentAlert.Text = sb.ToString();
-                   
+
             }
 
             
