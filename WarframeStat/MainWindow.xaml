@@ -14,15 +14,17 @@
         <Label x:Name="DayNight" Content="Day/Night" HorizontalAlignment="Left" Margin="20,58,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="TimeLeft" Content="Time Left" HorizontalAlignment="Left" Margin="20,84,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="124"/>
         <Label x:Name="label2" Content="Cetus Time" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" FontSize="20px" Width="124" HorizontalContentAlignment="Center"/>
-        <Grid  Margin="0,17,10,0" HorizontalAlignment="Right" Width="212" Height="372" VerticalAlignment="Top">
-            <Rectangle Fill="#FFF4F4F5" Margin="-1,0,0,-1" Opacity="0.65"/>
+        <Grid  Margin="0,17,10,0" HorizontalAlignment="Right" Width="557" Height="260" VerticalAlignment="Top">
+            <Rectangle Fill="#FFF4F4F5" Margin="-1,0,0,0" Opacity="0.65"/>
             <Label x:Name="label2_Copy" Content="Sorties" Margin="-1,21,0,0" VerticalAlignment="Top" FontSize="20px" HorizontalContentAlignment="Center"/>
-            <TextBlock TextWrapping="Wrap" x:Name="misType1"  Text="Mission Type 1" Margin="54,81,53,232" FontSize="16"/>
-            <TextBlock TextWrapping="Wrap" x:Name="misType2" Text="Mission Type 2" Margin="56,164,57,134" FontSize="16"/>
-            <TextBlock TextWrapping="Wrap" x:Name="misType3"  Text="Mission Type 3" Margin="56,255,57,41" FontSize="16"/>
-            <TextBlock TextWrapping="Wrap" x:Name="misMod3"   Text="Mission Modifier 3" Margin="56,293,57,24"/>
-            <TextBlock TextWrapping="Wrap" x:Name="misMod1"   Text="Mission Modifier 1" Margin="54,107,53,180" />
-            <TextBlock TextWrapping="Wrap" x:Name="misMod2"   Text="Mission Modifier 2" Margin="56,205,57,84"/>
+            <TextBlock TextWrapping="Wrap" x:Name="misType1"  Text="Mission Type 1" Margin="24,78,377,0"  Height="26" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Width="137"/>
+            <TextBlock TextWrapping="Wrap" x:Name="misType2" Text="Mission Type 2" Margin="219,78,185,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Width="134"/>
+            <TextBlock TextWrapping="Wrap" x:Name="misType3"  Text="Mission Type 3" Margin="387,78,23,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Width="128"/>
+            <TextBlock TextWrapping="Wrap" x:Name="misMod3"   Text="Mission Modifier 3" Margin="387,104,52,0" HorizontalAlignment="Center" Height="102" VerticalAlignment="Top" Width="99"/>
+            <TextBlock TextWrapping="Wrap" x:Name="misMod1"   Text="Mission Modifier 1" Margin="24,104,409,0" HorizontalAlignment="Center" Height="102" VerticalAlignment="Top" Width="105" />
+            <TextBlock TextWrapping="Wrap" x:Name="misMod2"   Text="Mission Modifier 2" Margin="219,104,220,0" HorizontalAlignment="Center" Height="102" VerticalAlignment="Top" Width="99"/>
+            <TextBlock Name="alert" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alert Rewards" VerticalAlignment="Top" Margin="228,144,0,0" FontSize="18" Width="115" RenderTransformOrigin="0.543,0.417"/>
+            <TextBlock Name="contentAlert" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alerts" VerticalAlignment="Top" Margin="228,168,0,0" FontSize="14" Width="84" Height="82"/>
         </Grid>
     </Grid>
 </Window>

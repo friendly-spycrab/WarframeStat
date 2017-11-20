@@ -46,13 +46,29 @@ namespace WarframeStat
         /// <param name="e"></param>
         private void MainStatUpdated(object sender, MainStatUpdatedEventArgs e)
         {
+            // Set sortie information
             misType1.Text = e.NewStat.Sortie.Variants[0].MissionType;
             misType2.Text = e.NewStat.Sortie.Variants[1].MissionType;
             misType3.Text = e.NewStat.Sortie.Variants[2].MissionType;
-
             misMod1.Text = e.NewStat.Sortie.Variants[0].Modifier;
             misMod2.Text = e.NewStat.Sortie.Variants[1].Modifier;
             misMod3.Text = e.NewStat.Sortie.Variants[2].Modifier;
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Alert item in e.NewStat.Alerts)
+            {
+                
+                foreach (var Rewards in item.RewardTypes)
+                {
+                    sb.AppendLine(Rewards);
+                }
+                contentAlert.Text = sb.ToString();
+                   
+            }
+
+            
+
         }
 
         private void CetusCycleUpdated(object sender, CetusCycleUpdatedEventArgs e)

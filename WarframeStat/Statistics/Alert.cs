@@ -29,6 +29,11 @@ namespace WarframeStat.Statistics
 
         [JsonProperty("rewardTypes")]
         public List<string> RewardTypes { get; set; }
+
+        public override string ToString()
+        {
+            return Activation + "\n" + Eta + "\n" + Expired + "\n" + Expiry + "\n" + Id + "\n" + Mission + "\n" + String.Join("\n", RewardTypes.ToArray());
+        }
     }
 
 }
