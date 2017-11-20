@@ -108,6 +108,7 @@ namespace WarframeStat
         private void UpdateStat(object sender, EventArgs e)
         {
             stat.CetusCycle = UpdateCetusCycle(stat.CetusCycle,new TimeSpan(0,0,1));
+            OnMainStatUpdated(new MainStatUpdatedEventArgs() { NewStat = stat });
         }
 
         /// <summary>
